@@ -1,4 +1,4 @@
-package ua.kiev.naukma.auth.client;
+package ua.kiev.naukma.auth.client.service;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
@@ -9,4 +9,6 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("greet")
 public interface GreetingService extends RemoteService {
     String greetServer(String name) throws IllegalArgumentException;
+
+    String register(String name, String password);
 }

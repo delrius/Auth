@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-  <!-- Inherit our applications main module.                      -->
-  <inherits name='ua.kiev.naukma.auth.Auth' />
+    <!-- Inherit our applications main module.                      -->
+    <inherits name='ua.kiev.naukma.auth.Auth'/>
 
-  <!-- Specify the path to any remote services.                   -->
-  <servlet path="/Auth/greet" class="ua.kiev.naukma.auth.server.GreetingServiceImpl" />
+    <!-- Specify the path to any remote services.                   -->
+    <servlet path="/Auth/greet" class="ua.kiev.naukma.auth.server.LoginServiceImpl"/>
 
 </module>

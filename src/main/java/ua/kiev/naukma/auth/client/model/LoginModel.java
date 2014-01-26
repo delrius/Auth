@@ -1,4 +1,4 @@
-package ua.kiev.naukma.auth.client;
+package ua.kiev.naukma.auth.client.model;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
