@@ -6,6 +6,7 @@
     <ui:with field="styles" type="ua.kiev.naukma.auth.client.resources.MyBundle" />
 
     <g:VerticalPanel width="100%" height="100%">
+
         <g:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
             <g:Label addStyleNames="{styles.css.headerStyle}" text="{res.projectName}"/>
         </g:cell>

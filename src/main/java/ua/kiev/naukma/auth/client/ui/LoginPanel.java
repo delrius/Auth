@@ -15,6 +15,7 @@ import ua.kiev.naukma.auth.client.Messages;
 import ua.kiev.naukma.auth.client.model.LoginModel;
 import ua.kiev.naukma.auth.client.service.RegistrationServiceAsync;
 import ua.kiev.naukma.auth.client.service.LoginServiceAsync;
+import ua.kiev.naukma.auth.client.utils.FlowManager;
 import ua.kiev.naukma.auth.client.utils.MD5;
 import ua.kiev.naukma.auth.shared.ConstantResults;
 
@@ -77,13 +78,14 @@ public class LoginPanel extends Composite {
 
                 service.register(model.getLogin(), hashed, new AsyncCallback<String>() {
                     public void onFailure(Throwable caught) {
+                        System.out.println(caught.getMessage());
                     }
 
                     public void onSuccess(String result) {
                         if (result.equals(ConstantResults.alreadyRegistered)) {
                             loginEditor.setLoginInvalid(messages.userNameExists());
                         } else {
-                            //TODO: sign up
+                            FlowManager.switchToFlow(FlowManager.Flow.AFTER_SIGN_UP);
                         }
                     }
                 });
@@ -101,6 +103,7 @@ public class LoginPanel extends Composite {
 
                 loginService.login(model.getLogin(), hashed, new AsyncCallback<String>() {
                     public void onFailure(Throwable caught) {
+                        System.out.println(caught.getMessage());
                     }
 
                     public void onSuccess(String result) {
@@ -109,7 +112,7 @@ public class LoginPanel extends Composite {
                         } else if (result.equals(ConstantResults.passwordIncorrect)) {
                             loginEditor.setPassInvalid(messages.passwordIncorrect());
                         } else {
-                            //TODO: sign in
+                            FlowManager.switchToFlow(FlowManager.Flow.AFTER_SIGN_IN);
                         }
                     }
                 });

@@ -5,11 +5,13 @@
 
     <!-- We need the JUnit module in the main module,               -->
     <!-- otherwise eclipse complains (Google plugin bug?)           -->
-    <inherits name='com.google.gwt.junit.JUnit'/>
+    <!--<inherits name='com.google.gwt.junit.JUnit'/>-->
 
     <inherits name="com.google.gwt.resources.Resources"/>
 
     <extend-property name="locale" values="ua"/>
+    <extend-property name="locale" values="en"/>
+
 
     <!-- Inherit the default GWT style sheet.  You can change       -->
     <!-- the theme of your GWT application by uncommenting          -->

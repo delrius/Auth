@@ -1,0 +1,10 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:with field='res' type='ua.kiev.naukma.auth.client.Messages'/>
+    <ui:with field="styles" type="ua.kiev.naukma.auth.client.resources.MyBundle" />
+
+    <g:VerticalPanel>
+        <g:Label text="{res.loginSuccess}"/>
+        <g:Anchor text="{res.backLinkLabel}" ui:field="link" href="javascript:;"/>
+    </g:VerticalPanel>
+</ui:UiBinder>

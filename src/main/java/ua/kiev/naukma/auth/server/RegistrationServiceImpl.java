@@ -10,10 +10,6 @@ import ua.kiev.naukma.auth.client.service.RegistrationService;
 public class RegistrationServiceImpl extends RemoteServiceServlet implements
         RegistrationService {
 
-    public String greetServer(String input) throws IllegalArgumentException {
-        return null;
-    }
-
     public String register(String name, String password) {
         return FileUtils.register(name, password);
     }

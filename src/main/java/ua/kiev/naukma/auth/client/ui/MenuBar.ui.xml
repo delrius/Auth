@@ -1,0 +1,18 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <ui:with field='res' type='ua.kiev.naukma.auth.client.Messages'/>
+
+    <g:MenuBar>
+       <g:MenuItem text="{res.fileMenuItem}">
+           <g:MenuBar vertical="true">
+               <g:MenuItem text="{res.languageMenuItem}" >
+                   <g:MenuBar vertical="true">
+                       <g:MenuItem text="{res.englishMenu}" ui:field="enMenu" />
+                       <g:MenuItem text="{res.ukrainianMenu}" ui:field="uaMenu" />
+                   </g:MenuBar>
+               </g:MenuItem>
+           </g:MenuBar>
+       </g:MenuItem>
+    </g:MenuBar>
+</ui:UiBinder>

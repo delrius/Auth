@@ -23,7 +23,7 @@
 
     <servlet-mapping>
         <servlet-name>registrationServlet</servlet-name>
-        <url-pattern>/Auth/greet</url-pattern>
+        <url-pattern>/Auth/register</url-pattern>
     </servlet-mapping>
 
     <!-- Default page to serve -->
