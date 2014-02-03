@@ -13,14 +13,13 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import ua.kiev.naukma.auth.client.Messages;
 import ua.kiev.naukma.auth.client.model.LoginModel;
-import ua.kiev.naukma.auth.client.service.GreetingServiceAsync;
+import ua.kiev.naukma.auth.client.service.RegistrationServiceAsync;
 import ua.kiev.naukma.auth.client.service.LoginServiceAsync;
-import ua.kiev.naukma.auth.client.ui.widgets.MessageBox;
 import ua.kiev.naukma.auth.client.utils.MD5;
 import ua.kiev.naukma.auth.shared.ConstantResults;
 
 public class LoginPanel extends Composite {
-    private GreetingServiceAsync service = GreetingServiceAsync.Util.getInstance();
+    private RegistrationServiceAsync service = RegistrationServiceAsync.Util.getInstance();
     private LoginServiceAsync loginService = LoginServiceAsync.Util.getInstance();
     private Messages messages = GWT.create(Messages.class);
 
@@ -28,10 +27,10 @@ public class LoginPanel extends Composite {
     LoginEditor loginEditor;
 
     @UiField
-    Button sendButton;
+    Button signUpButton;
 
     @UiField
-    Button signIn;
+    Button signInButton;
 
     @Override
     public Widget asWidget() {
@@ -53,7 +52,21 @@ public class LoginPanel extends Composite {
     public LoginPanel() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
-        sendButton.addClickHandler(new ClickHandler() {
+        signUpButton.setEnabled(false);
+        signInButton.setEnabled(false);
+
+        loginEditor.setCallback(new LoginEditor.CallBackImpl() {
+            public void call() {
+                if (signInButton != null) {
+                    signInButton.setEnabled(loginEditor.isValid());
+                }
+                if (signUpButton != null) {
+                    signUpButton.setEnabled(loginEditor.isValid());
+                }
+            }
+        });
+
+        signUpButton.addClickHandler(new ClickHandler() {
             public void onClick(ClickEvent event) {
                 if (!loginEditor.isValid()) {
                     return;
@@ -64,21 +77,20 @@ public class LoginPanel extends Composite {
 
                 service.register(model.getLogin(), hashed, new AsyncCallback<String>() {
                     public void onFailure(Throwable caught) {
-                        MessageBox.show("del", caught.getMessage());
                     }
 
                     public void onSuccess(String result) {
                         if (result.equals(ConstantResults.alreadyRegistered)) {
                             loginEditor.setLoginInvalid(messages.userNameExists());
                         } else {
-                            MessageBox.show("ura", "Registration success");
+                            //TODO: sign up
                         }
                     }
                 });
             }
         });
 
-        signIn.addClickHandler(new ClickHandler() {
+        signInButton.addClickHandler(new ClickHandler() {
             public void onClick(ClickEvent event) {
                 if (!loginEditor.isValid()) {
                     return;
@@ -89,7 +101,6 @@ public class LoginPanel extends Composite {
 
                 loginService.login(model.getLogin(), hashed, new AsyncCallback<String>() {
                     public void onFailure(Throwable caught) {
-                        MessageBox.show("del", caught.getMessage());
                     }
 
                     public void onSuccess(String result) {
@@ -98,7 +109,7 @@ public class LoginPanel extends Composite {
                         } else if (result.equals(ConstantResults.passwordIncorrect)) {
                             loginEditor.setPassInvalid(messages.passwordIncorrect());
                         } else {
-                            MessageBox.show("Ura", "Login success");
+                            //TODO: sign in
                         }
                     }
                 });

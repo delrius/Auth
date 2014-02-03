@@ -50,8 +50,8 @@ public class LoginEditor extends Composite implements Editor<LoginModel> {
     }
 
     public void initWidget() {
-        loginLabel = new Label(messages.loginLabel());
-        passwordLabel = new Label(messages.passwordLabel());
+        loginLabel = new Label(messages.loginFieldLabel());
+        passwordLabel = new Label(messages.passwordFieldLabel());
 
         loginError = new Image(bundle.errorIcon());
         loginError.setTitle("Password is required");
@@ -63,12 +63,18 @@ public class LoginEditor extends Composite implements Editor<LoginModel> {
         login.addKeyUpHandler(new KeyUpHandler() {
             public void onKeyUp(KeyUpEvent event) {
                 validateField(login, loginError, messages.loginTooShort());
+                if (callback != null) {
+                    callback.call();
+                }
             }
         });
 
         login.addBlurHandler(new BlurHandler() {
             public void onBlur(BlurEvent event) {
                 validateField(login, loginError, messages.loginTooShort());
+                if (callback != null) {
+                    callback.call();
+                }
             }
         });
 
@@ -76,12 +82,18 @@ public class LoginEditor extends Composite implements Editor<LoginModel> {
         password.addKeyUpHandler(new KeyUpHandler() {
             public void onKeyUp(KeyUpEvent event) {
                 validateField(password, passwordError, messages.passwordTooShort());
+                if (callback != null) {
+                    callback.call();
+                }
             }
         });
 
         password.addBlurHandler(new BlurHandler() {
             public void onBlur(BlurEvent event) {
                 validateField(password, passwordError, messages.passwordTooShort());
+                if (callback != null) {
+                    callback.call();
+                }
             }
         });
 
@@ -136,5 +148,15 @@ public class LoginEditor extends Composite implements Editor<LoginModel> {
     public void setPassInvalid(String text) {
         passwordError.setTitle(text);
         passwordError.setVisible(true);
+    }
+
+    public void setCallback(CallBackImpl callback) {
+        this.callback = callback;
+    }
+
+    private CallBackImpl callback;
+
+    public interface CallBackImpl {
+        public void call();
     }
 }

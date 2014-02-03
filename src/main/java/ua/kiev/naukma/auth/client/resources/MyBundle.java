@@ -16,6 +16,6 @@ public interface MyBundle extends ClientBundle {
 
 
     interface MyCss extends CssResource {
-        public String myStyle();
+        public String headerStyle();
     }
 }

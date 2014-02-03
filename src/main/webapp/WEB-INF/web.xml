@@ -7,8 +7,8 @@
 
     <!-- Servlets -->
     <servlet>
-        <servlet-name>greetServlet</servlet-name>
-        <servlet-class>ua.kiev.naukma.auth.server.GreetingServiceImpl</servlet-class>
+        <servlet-name>registrationServlet</servlet-name>
+        <servlet-class>ua.kiev.naukma.auth.server.RegistrationServiceImpl</servlet-class>
     </servlet>
 
     <servlet>
@@ -22,7 +22,7 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>greetServlet</servlet-name>
+        <servlet-name>registrationServlet</servlet-name>
         <url-pattern>/Auth/greet</url-pattern>
     </servlet-mapping>
 

@@ -7,7 +7,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  * The client side stub for the RPC service.
  */
 @RemoteServiceRelativePath("greet")
-public interface GreetingService extends RemoteService {
+public interface RegistrationService extends RemoteService {
     String greetServer(String name) throws IllegalArgumentException;
 
     String register(String name, String password);

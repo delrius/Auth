@@ -2,14 +2,20 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
              xmlns:my='urn:import:ua.kiev.naukma.auth.client.ui'
         >
+    <ui:with field='res' type='ua.kiev.naukma.auth.client.Messages'/>
+    <ui:with field="styles" type="ua.kiev.naukma.auth.client.resources.MyBundle" />
+
     <g:VerticalPanel width="100%" height="100%">
+        <g:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+            <g:Label addStyleNames="{styles.css.headerStyle}" text="{res.projectName}"/>
+        </g:cell>
         <g:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
             <my:LoginEditor ui:field="loginEditor"/>
         </g:cell>
         <g:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
             <g:HorizontalPanel spacing="5">
-                <g:Button ui:field="sendButton" text="Sign Up"/>
-                <g:Button ui:field="signIn" text="Sign In"/>
+                <g:Button ui:field="signUpButton" text="{res.signUpButtonLabel}"/>
+                <g:Button ui:field="signInButton" text="{res.signInButtonLabel}"/>
             </g:HorizontalPanel>
         </g:cell>
     </g:VerticalPanel>

@@ -1,14 +1,14 @@
 package ua.kiev.naukma.auth.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import ua.kiev.naukma.auth.client.service.GreetingService;
+import ua.kiev.naukma.auth.client.service.RegistrationService;
 
 /**
  * The server side implementation of the RPC service.
  */
 @SuppressWarnings("serial")
-public class GreetingServiceImpl extends RemoteServiceServlet implements
-        GreetingService {
+public class RegistrationServiceImpl extends RemoteServiceServlet implements
+        RegistrationService {
 
     public String greetServer(String input) throws IllegalArgumentException {
         return null;
