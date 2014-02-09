@@ -73,6 +73,7 @@ public class SignInSuccessPanel extends Composite {
             public void onClick(ClickEvent event) {
                 dataGrid.setVisible(true);
                 pager.setVisible(true);
+                dataGrid.setVisibleRangeAndClearData(dataGrid.getVisibleRange(), true);
             }
         });
     }
