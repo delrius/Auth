@@ -11,12 +11,13 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import ua.kiev.naukma.auth.client.utils.FlowManager;
 
-public class SignUpSuccessPanel extends Composite {
-    private static SignUpSuccessPanelUiBinder ourUiBinder = GWT.create(SignUpSuccessPanelUiBinder.class);
+public class RegistrationSuccessPanel extends Composite {
+    private static SignInSuccessPanelUiBinder ourUiBinder = GWT.create(SignInSuccessPanelUiBinder.class);
+
     @UiField
     Anchor link;
 
-    public SignUpSuccessPanel() {
+    public RegistrationSuccessPanel() {
         initWidget(ourUiBinder.createAndBindUi(this));
         link.addClickHandler(new ClickHandler() {
             public void onClick(ClickEvent event) {
@@ -30,6 +31,6 @@ public class SignUpSuccessPanel extends Composite {
         return this;
     }
 
-    interface SignUpSuccessPanelUiBinder extends UiBinder<VerticalPanel, SignUpSuccessPanel> {
+    interface SignInSuccessPanelUiBinder extends UiBinder<VerticalPanel, RegistrationSuccessPanel> {
     }
 }

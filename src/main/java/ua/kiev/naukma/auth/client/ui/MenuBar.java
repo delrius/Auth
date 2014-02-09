@@ -16,6 +16,8 @@ public class MenuBar extends Composite {
     MenuItem enMenu;
     @UiField
     MenuItem uaMenu;
+    @UiField
+    MenuItem browserMenu;
 
     public MenuBar() {
         initWidget(ourUiBinder.createAndBindUi(this));
@@ -27,7 +29,13 @@ public class MenuBar extends Composite {
 
         uaMenu.setScheduledCommand(new Scheduler.ScheduledCommand() {
             public void execute() {
-                changeLocale("ua");
+                changeLocale("uk");
+            }
+        });
+
+        browserMenu.setScheduledCommand(new Scheduler.ScheduledCommand() {
+            public void execute() {
+                changeLocale(null);
             }
         });
     }
@@ -38,10 +46,18 @@ public class MenuBar extends Composite {
     }
 
     private void changeLocale(String locale) {
-        Window.Location.assign(
-                Window.Location.createUrlBuilder()
-                        .setParameter(LocaleInfo.getLocaleQueryParam(), locale)
-                        .buildString());
+        if (locale == null) {
+            Window.Location.assign(
+                    Window.Location.createUrlBuilder()
+                            .removeParameter(LocaleInfo.getLocaleQueryParam())
+                            .buildString());
+        } else
+            Window.Location.assign(
+                    Window.Location.createUrlBuilder()
+                            .setParameter(LocaleInfo.getLocaleQueryParam(), locale)
+                            .buildString());
+
+
     }
 
 

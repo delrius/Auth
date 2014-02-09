@@ -1,8 +1,8 @@
-package ua.kiev.naukma.auth.client.model;
+package ua.kiev.naukma.auth.shared.model;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
-public class LoginModel implements IsSerializable {
+public class LoginModel implements IsSerializable, Comparable<LoginModel> {
     private String login;
     private String password;
 
@@ -24,5 +24,9 @@ public class LoginModel implements IsSerializable {
 
     public LoginModel() {
         super();
+    }
+
+    public int compareTo(LoginModel o) {
+        return login == null ? 0 : login.compareTo(o.getLogin());
     }
 }

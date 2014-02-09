@@ -13,5 +13,4 @@ public class Auth implements EntryPoint {
         RootPanel.get("menu").add(new MenuBar().asWidget());
         RootPanel.get("bodyElem").add(new LoginPanel().asWidget());
     }
-
 }

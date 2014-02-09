@@ -11,8 +11,7 @@ public class MD5 {
             m.update(str.getBytes());
             byte[] digest = m.digest();
             BigInteger bigInt = new BigInteger(1, digest);
-            String hashtext = bigInt.toString(16);
-            return hashtext;
+            return bigInt.toString(16);
         } catch (Exception e) {
             return null;
         }

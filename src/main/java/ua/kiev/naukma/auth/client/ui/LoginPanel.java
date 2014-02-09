@@ -12,12 +12,12 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import ua.kiev.naukma.auth.client.Messages;
-import ua.kiev.naukma.auth.client.model.LoginModel;
-import ua.kiev.naukma.auth.client.service.RegistrationServiceAsync;
 import ua.kiev.naukma.auth.client.service.LoginServiceAsync;
+import ua.kiev.naukma.auth.client.service.RegistrationServiceAsync;
 import ua.kiev.naukma.auth.client.utils.FlowManager;
 import ua.kiev.naukma.auth.client.utils.MD5;
 import ua.kiev.naukma.auth.shared.ConstantResults;
+import ua.kiev.naukma.auth.shared.model.LoginModel;
 
 public class LoginPanel extends Composite {
     private RegistrationServiceAsync service = RegistrationServiceAsync.Util.getInstance();

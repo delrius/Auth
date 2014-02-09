@@ -4,15 +4,16 @@
     <ui:with field='res' type='ua.kiev.naukma.auth.client.Messages'/>
 
     <g:MenuBar>
-       <g:MenuItem text="{res.fileMenuItem}">
-           <g:MenuBar vertical="true">
-               <g:MenuItem text="{res.languageMenuItem}" >
-                   <g:MenuBar vertical="true">
-                       <g:MenuItem text="{res.englishMenu}" ui:field="enMenu" />
-                       <g:MenuItem text="{res.ukrainianMenu}" ui:field="uaMenu" />
-                   </g:MenuBar>
-               </g:MenuItem>
-           </g:MenuBar>
-       </g:MenuItem>
+        <g:MenuItem text="{res.fileMenuItem}">
+            <g:MenuBar vertical="true">
+                <g:MenuItem text="{res.languageMenuItem}">
+                    <g:MenuBar vertical="true">
+                        <g:MenuItem text="{res.englishMenu}" ui:field="enMenu"/>
+                        <g:MenuItem text="{res.ukrainianMenu}" ui:field="uaMenu"/>
+                        <g:MenuItem text="{res.browserMenu}" ui:field="browserMenu"/>
+                    </g:MenuBar>
+                </g:MenuItem>
+            </g:MenuBar>
+        </g:MenuItem>
     </g:MenuBar>
 </ui:UiBinder>

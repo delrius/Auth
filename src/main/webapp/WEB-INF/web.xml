@@ -16,6 +16,11 @@
         <servlet-class>ua.kiev.naukma.auth.server.LoginServiceImpl</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>userServlet</servlet-name>
+        <servlet-class>ua.kiev.naukma.auth.server.UserServiceImpl</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/Auth/login</url-pattern>
@@ -24,6 +29,11 @@
     <servlet-mapping>
         <servlet-name>registrationServlet</servlet-name>
         <url-pattern>/Auth/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>userServlet</servlet-name>
+        <url-pattern>/Auth/user</url-pattern>
     </servlet-mapping>
 
     <!-- Default page to serve -->

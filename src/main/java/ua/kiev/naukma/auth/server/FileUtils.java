@@ -1,6 +1,7 @@
 package ua.kiev.naukma.auth.server;
 
 import ua.kiev.naukma.auth.shared.ConstantResults;
+import ua.kiev.naukma.auth.shared.model.LoginModel;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,6 +10,9 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class FileUtils {
@@ -72,10 +76,10 @@ public class FileUtils {
                             path,
                             Charset.defaultCharset());
 
-            String line = null;
+            String line;
             while ((line = reader.readLine()) != null) {
                 String[] c = line.split(separator);
-                if (c != null && c.length == 2) {
+                if (c.length == 2) {
                     passwords.put(c[0], c[1]);
                 }
             }
@@ -85,5 +89,14 @@ public class FileUtils {
         }
     }
 
-
+    public static List<LoginModel> getUsers() {
+        List<LoginModel> list = new ArrayList<LoginModel>(passwords.size());
+        for (Map.Entry<String, String> user : passwords.entrySet()) {
+            LoginModel model = new LoginModel();
+            model.setLogin(user.getKey());
+            model.setPassword(user.getValue());
+            list.add(model);
+        }
+        return list;
+    }
 }

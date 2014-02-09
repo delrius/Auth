@@ -2,16 +2,13 @@
 <module rename-to='Auth'>
     <!-- Inherit the core Web Toolkit stuff.                        -->
     <inherits name='com.google.gwt.user.User'/>
-
-    <!-- We need the JUnit module in the main module,               -->
-    <!-- otherwise eclipse complains (Google plugin bug?)           -->
-    <!--<inherits name='com.google.gwt.junit.JUnit'/>-->
-
+    <inherits name="com.google.gwt.i18n.I18N"/>
     <inherits name="com.google.gwt.resources.Resources"/>
 
-    <extend-property name="locale" values="ua"/>
+    <extend-property name="locale" values="uk"/>
     <extend-property name="locale" values="en"/>
 
+    <set-configuration-property name="locale.useragent" value="Y"/>
 
     <!-- Inherit the default GWT style sheet.  You can change       -->
     <!-- the theme of your GWT application by uncommenting          -->

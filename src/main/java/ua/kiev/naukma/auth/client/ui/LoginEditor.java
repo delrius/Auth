@@ -11,8 +11,8 @@ import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import ua.kiev.naukma.auth.client.Messages;
-import ua.kiev.naukma.auth.client.model.LoginModel;
 import ua.kiev.naukma.auth.client.resources.MyBundle;
+import ua.kiev.naukma.auth.shared.model.LoginModel;
 
 public class LoginEditor extends Composite implements Editor<LoginModel> {
 
@@ -22,7 +22,6 @@ public class LoginEditor extends Composite implements Editor<LoginModel> {
     private static Binder1 uiBinder = GWT.create(Binder1.class);
     private static MyBundle bundle = MyBundle.INSTANCE;
     private final Messages messages = GWT.create(Messages.class);
-    private final int minLength = 4;
 
     @UiField(provided = true)
     @Ignore
@@ -114,6 +113,7 @@ public class LoginEditor extends Composite implements Editor<LoginModel> {
     }
 
     public boolean isValid(TextBox tb) {
+        int minLength = 4;
         return (tb.getValue() != null) && (tb.getValue().length() >= minLength);
     }
 
