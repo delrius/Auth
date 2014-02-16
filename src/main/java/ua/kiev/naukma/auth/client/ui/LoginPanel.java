@@ -82,7 +82,7 @@ public class LoginPanel extends Composite {
                     public void onSuccess(String result) {
                         if (result.equals(ConstantResults.alreadyRegistered)) {
                             loginEditor.setLoginInvalid(messages.userNameExists());
-                        } else {
+                        } else if (result.equals(ConstantResults.registered)){
                             FlowManager.switchToFlow(FlowManager.Flow.AFTER_SIGN_UP);
                         }
                     }
@@ -109,7 +109,7 @@ public class LoginPanel extends Composite {
                             loginEditor.setLoginInvalid(messages.userNotExists());
                         } else if (result.equals(ConstantResults.passwordIncorrect)) {
                             loginEditor.setPassInvalid(messages.passwordIncorrect());
-                        } else {
+                        } else if (result.equals(ConstantResults.logined)){
                             FlowManager.switchToFlow(FlowManager.Flow.AFTER_SIGN_IN);
                         }
                     }

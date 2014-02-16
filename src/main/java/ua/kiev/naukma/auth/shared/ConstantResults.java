@@ -6,4 +6,5 @@ public class ConstantResults {
     public static String passwordIncorrect = "Incorrect password";
     public static String registered = "Registered";
     public static String alreadyRegistered = "User already registered";
+    public static String databaseError = "Database error";
 }

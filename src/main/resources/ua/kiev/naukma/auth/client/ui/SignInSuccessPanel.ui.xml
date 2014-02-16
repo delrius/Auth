@@ -9,7 +9,7 @@
         <g:north size="6">
 
             <g:VerticalPanel>
-                <g:Label text="{res.registrationSuccess}"/>
+                <g:Label text="{res.loginSuccess}"/>
                 <g:Anchor text="{res.backLinkLabel}" ui:field="link" href="javascript:;"/>
                 <g:Button text="{res.showUsers}" ui:field="showUsersButton"/>
             </g:VerticalPanel>
