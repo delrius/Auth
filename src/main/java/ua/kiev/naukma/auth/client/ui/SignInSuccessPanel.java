@@ -41,7 +41,7 @@ public class SignInSuccessPanel extends Composite {
         DataGridResources resources = GWT.create(DataGridResources.class);
         resources.dataGridStyle().ensureInjected();
 
-        dataGrid = new DataGrid<LoginModel>(30, resources, LoginModelProperties.KEY_PROVIDER);
+        dataGrid = new DataGrid<LoginModel>(10, resources, LoginModelProperties.KEY_PROVIDER);
         dataGrid.setWidth("100%");
         dataGrid.setAutoHeaderRefreshDisabled(true);
 

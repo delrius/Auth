@@ -11,4 +11,5 @@ import ua.kiev.naukma.auth.shared.model.PagingResult;
 @RemoteServiceRelativePath("user")
 public interface UserService extends RemoteService {
     PagingResult<LoginModel> getUsers(int start, int length, boolean sortInfo);
+
 }

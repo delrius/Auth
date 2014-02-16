@@ -33,7 +33,7 @@ public class UserServiceImpl extends RemoteServiceServlet implements
 
         ArrayList<LoginModel> result = new ArrayList<LoginModel>();
 
-        for (LoginModel model : users.subList(start, length > users.size() - start ? users.size() : length)) {
+        for (LoginModel model : users.subList(start, length > users.size() - start ? users.size() : start + length)) {
             result.add(model);
         }
 
