@@ -1,7 +1,8 @@
-package ua.kiev.naukma.auth.server;
+package ua.kiev.naukma.auth.server.service;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import ua.kiev.naukma.auth.client.service.UserService;
+import ua.kiev.naukma.auth.server.utils.FileUtils;
 import ua.kiev.naukma.auth.shared.model.LoginModel;
 import ua.kiev.naukma.auth.shared.model.PagingResult;
 

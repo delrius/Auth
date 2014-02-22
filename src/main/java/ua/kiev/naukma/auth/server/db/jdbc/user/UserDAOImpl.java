@@ -1,5 +1,6 @@
-package ua.kiev.naukma.auth.server.db;
+package ua.kiev.naukma.auth.server.db.jdbc.user;
 
+import ua.kiev.naukma.auth.server.db.jdbc.DatabaseConnectivityMgr;
 
 public class UserDAOImpl implements UserDAO {
 

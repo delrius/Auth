@@ -8,17 +8,22 @@
     <!-- Servlets -->
     <servlet>
         <servlet-name>registrationServlet</servlet-name>
-        <servlet-class>ua.kiev.naukma.auth.server.RegistrationServiceImpl</servlet-class>
+        <servlet-class>ua.kiev.naukma.auth.server.service.RegistrationServiceImpl</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>loginServlet</servlet-name>
-        <servlet-class>ua.kiev.naukma.auth.server.LoginServiceImpl</servlet-class>
+        <servlet-class>ua.kiev.naukma.auth.server.service.LoginServiceImpl</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>userServlet</servlet-name>
-        <servlet-class>ua.kiev.naukma.auth.server.UserServiceImpl</servlet-class>
+        <servlet-class>ua.kiev.naukma.auth.server.service.UserServiceImpl</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>gwtRequest</servlet-name>
+        <servlet-class>com.google.web.bindery.requestfactory.server.RequestFactoryServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -34,6 +39,11 @@
     <servlet-mapping>
         <servlet-name>userServlet</servlet-name>
         <url-pattern>/Auth/user</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>gwtRequest</servlet-name>
+        <url-pattern>/gwtRequest</url-pattern>
     </servlet-mapping>
 
     <!-- Default page to serve -->

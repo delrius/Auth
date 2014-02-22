@@ -1,4 +1,4 @@
-package ua.kiev.naukma.auth.server.db;
+package ua.kiev.naukma.auth.server.db.jdbc;
 
 
 import javax.naming.InitialContext;
@@ -11,11 +11,10 @@ import java.util.List;
 public class DatabaseConnectivityMgr {
 
     private DataSource ds;
-    private InitialContext ic;
 
     public DatabaseConnectivityMgr() {
         try {
-            ic = new InitialContext();
+            InitialContext ic = new InitialContext();
             ds = (DataSource) ic.lookup("java:comp/env/jdbc/USERDB");
         } catch (NamingException e) {
             e.printStackTrace();

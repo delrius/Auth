@@ -1,4 +1,4 @@
-package ua.kiev.naukma.auth.server;
+package ua.kiev.naukma.auth.server.utils;
 
 import ua.kiev.naukma.auth.shared.ConstantResults;
 import ua.kiev.naukma.auth.shared.model.LoginModel;

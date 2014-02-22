@@ -1,4 +1,4 @@
-package ua.kiev.naukma.auth.server.db;
+package ua.kiev.naukma.auth.server.db.jdbc.user;
 
 
 public interface UserDAO {

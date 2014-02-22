@@ -26,6 +26,7 @@ public class LoginModel implements IsSerializable, Comparable<LoginModel> {
         super();
     }
 
+    @Override
     public int compareTo(LoginModel o) {
         return login == null ? 0 : login.compareTo(o.getLogin());
     }
